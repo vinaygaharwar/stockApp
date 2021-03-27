@@ -10,6 +10,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TablePagination from '@material-ui/core/TablePagination';
+import { DataTable } from 'react-native-paper';
 
 
 
@@ -42,54 +43,123 @@ const App =() => {
   
   return (  
     <View style={{marginTop:40}}>         
-      <View style={{flexDirection: 'column',marginBottom:15}}>         
-        <View style={{flexDirection: 'row'}}>
-          <Card style={{marginLeft:140,marginBottom:30 }}/>
-          <View style={{flex:1,marginBottom:30 , justifyContent:'space-between'}}>
-          <Card.Content style={{width: 300,height:200,backgroundColor:'#edf2ee'}}>
+      {/* <View style={{flexDirection: 'column',marginBottom:15}}>          */}
+        {/* <View style={{flexDirection: 'row'}}> */}
+          <Card style={{width: 320,height:140,marginLeft:40,backgroundColor:'#edf2ee'}}>
+          <View style={{flex:1, justifyContent:'space-between'}}>
+          <Card.Content >
           <View style={{flexDirection: 'row'}}>
-            <Text style={{marginTop:30,fontSize:20,fontWeight:'600'}}>GOOGL</Text>
+            <Text style={{marginTop:40,marginLeft:40,fontWeight:'600'}}>GOOGL</Text>
             <Image
-            style={{width:70,height:60,marginTop:30,marginLeft:120}}         
+            style={{width:70,height:60,marginTop:40,marginLeft:120}}         
             source={require('./images/GOOGL.png')}
             />
           </View>
-            <Text style={{marginTop:30,fontSize:30,fontWeight:'bold',marginLeft:60}}>1515 USD</Text>
+          <View>
+            <Text style={{marginTop:20,alignSelf:'center',fontWeight:'bold'}}>1515 USD</Text>
+            </View>
           </Card.Content>
           </View>
+          </Card>
+
+          <Card style={{width: 320,height:140,marginLeft:40,backgroundColor:'#edf2ee',marginTop:20}}>
+          <View style={{flex:1, justifyContent:'space-between'}}>
+          <Card.Content >
+          <View style={{flexDirection: 'row'}}>
+            <Text style={{marginTop:40,marginLeft:40,fontWeight:'600'}}>FB</Text>
+            <Image
+            style={{width:70,height:60,marginTop:40,marginLeft:120}}         
+            source={require('./images/FB.png')}
+            />
+          </View>
+          <View>
+            <Text style={{marginTop:20,alignSelf:'center',fontWeight:'bold'}}>266 USD</Text>
+            </View>
+          </Card.Content>
+          </View>
+          </Card>
+
+          <Card style={{width: 320,height:140,marginLeft:40,backgroundColor:'#edf2ee',marginTop:20}}>
+          <View style={{flex:1, justifyContent:'space-between'}}>
+          <Card.Content >
+          <View style={{flexDirection: 'row'}}>
+            <Text style={{marginTop:40,marginLeft:40,fontWeight:'600'}}>AMZN</Text>
+            <Image
+            style={{width:70,height:60,marginTop:40,marginLeft:120}}         
+            source={require('./images/AMZN.png')}
+            />
+          </View>
+          <View>
+            <Text style={{marginTop:20,alignSelf:'center',fontWeight:'bold'}}>3116 USD</Text>
+            </View>
+          </Card.Content>
+          </View>
+          </Card>
+   
     
-    <View style={{flex:1,marginBottom:30 , justifyContent:'space-between'}}>
-      <Card.Content style={{width: 300,height:200,backgroundColor:'#edf2ee'}}>
-      <View style={{flexDirection: 'row'}}>
-        <Text style={{marginTop:30,fontSize:20,fontWeight:'600'}}>GOOGL</Text>
-          <Image
-            style={{width:70,height:60,marginTop:30,marginLeft:120}}         
-          source={require('./images/FB.png')}
-           />
-      </View>
-        <Text style={{marginTop:30,fontSize:30,fontWeight:'bold',marginLeft:60}}>1515 USD</Text>
-      </Card.Content>
-    </View>
-    <View style={{flex:1,marginBottom:30 , justifyContent:'space-between'}}>
-    <Card.Content style={{width: 300,height:200,backgroundColor:'#edf2ee'}}>
-      <View style={{flexDirection: 'row'}}>
-        <Text style={{marginTop:30,fontSize:20,fontWeight:'600'}}>AMAZN</Text>
-         <Image
-           style={{width:70,height:60,marginTop:30,marginLeft:120}}
-          source={require('./images/AMZN.svg')}
-         />
-        </View>
-      <Text style={{marginTop:30,fontSize:30,fontWeight:'bold',marginLeft:60}}>3116 USD</Text>
-    </Card.Content>
-    </View>
-    </View>
-    </View>
+    {/* </View> */}
+    {/* </View> */}
     <View style={{width:900,height:600,alignSelf:'center'}}>
-      <TableContainer component={Paper}>
+
+    <DataTable style={{width:400,alignSelf:'center'}}>
+    
+    <DataTable.Header>
+      <DataTable.Title >SAVED DATA TABLE</DataTable.Title>
+      
+     
+    </DataTable.Header>
+
+    <DataTable.Row>
+      <DataTable.Cell >141 Capital Inc</DataTable.Cell>
+      <DataTable.Cell >
+      <TouchableOpacity  style={{backgroundColor:'#edf2ee',width:60,height:20,borderRadius:10}} >
+                <Text style={{color:'blue',alignSelf:'center',fontSize:16}}>.ONCP</Text>
+              </TouchableOpacity>
+      </DataTable.Cell>
+      
+    </DataTable.Row>
+
+   
+
+    <DataTable.Row>
+      <DataTable.Cell>BigString Corp</DataTable.Cell>
+      <DataTable.Cell >
+      <TouchableOpacity  style={{backgroundColor:'#edf2ee',width:60,height:20,borderRadius:10}} >
+                <Text style={{color:'blue',alignSelf:'center',fontSize:16}}>.BSGC</Text>
+              </TouchableOpacity>
+      </DataTable.Cell>
+      
+    </DataTable.Row>
+    
+    <DataTable.Row >
+    <DataTable.Cell></DataTable.Cell>
+    <DataTable.Cell  style={{alignSelf:'center'}} >
+
+    <TouchableOpacity style={{backgroundColor:'#8748e0',width:100,height:40,borderRadius:10}} >
+                <Text style={{color:'white',alignSelf:'center',fontSize:20}}>View</Text>
+              </TouchableOpacity>
+
+              </DataTable.Cell>
+    </DataTable.Row>
+
+    <DataTable.Pagination
+      page={1}
+      numberOfPages={3}
+      onPageChange={page => {
+        console.log(page);
+      }}
+      label="1-2 of 6"
+    />
+    <TouchableOpacity style={{backgroundColor:'#8748e0',width:100,height:40,borderRadius:10,alignSelf:'center'}} >
+                <Text style={{color:'white',alignSelf:'center',fontSize:20}}>Refresh</Text>
+              </TouchableOpacity>
+  </DataTable>
+      
+      {/* <TableContainer component={Paper}>
         <Table >
           <TableHead>
             <TableRow>
-              <TableCell style={{fontFamily:'sans-serif',fontSize:'26',fontWeight:'600'}}>Stock Details Table</TableCell>
+              <TableCell style={{fontFamily:'sans-serif',fontSize:'26',fontWeight:'600'}}><Text>Stock Details Table</Text></TableCell>
               <TableCell colSpan={2} >
               <Searchbar style={{width:400,color:'purple',backgroundColor:'#edf2ee'}}
                  placeholder="Search By Company Name"
@@ -101,11 +171,11 @@ const App =() => {
         </TableHead>
         <TableHead>
           <TableRow style={{backgroundColor:'#edf2ee'}}>
-            <TableCell style={{fontFamily:'sans-serif',color:'purple'}} align="right">COMPANY NAME</TableCell>
-            <TableCell style={{color:'purple',paddingLeft:100}} >SYMBOL</TableCell>
-            <TableCell style={{color:'purple'}} >MARKET CAP</TableCell>
+            <TableCell style={{fontFamily:'sans-serif',color:'purple'}} align="right"><Text>COMPANY NAME</Text></TableCell>
+            <TableCell style={{color:'purple',paddingLeft:100}} ><Text>SYMBOL</Text></TableCell>
+            <TableCell style={{color:'purple'}} ><Text>MARKET CAP</Text></TableCell>
             <TableCell style={{color:'purple'}} align="right"></TableCell>
-            <TableCell style={{color:'purple'}} align="right">CURRENT PRICE</TableCell>
+            <TableCell style={{color:'purple'}} align="right"><Text>CURRENT PRICE</Text></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -119,24 +189,24 @@ const App =() => {
                 <Text style={{color:'blue',alignSelf:'center',fontSize:16}}>{row.symbol}</Text>
               </TouchableOpacity>
               </TableCell>
-              <TableCell  style={{color:'grey'}} >{row.mCap}</TableCell>
+              <TableCell  style={{color:'grey'}} ><Text>{row.mCap}</Text></TableCell>
               <TableCell align="right"><TouchableOpacity style={{backgroundColor:'#8748e0',width:100,height:40,borderRadius:10}} >
                 <Text style={{color:'white',alignSelf:'center',fontSize:20}}>View</Text>
               </TouchableOpacity>
               </TableCell>
-              <TableCell align="right" ><View style={{fontWeight:'600'}}>{row.cPrice}</View> <View style={{color:'grey'}}>USD</View></TableCell>
+              <TableCell align="right" ><View style={{fontWeight:'600'}}><Text>{row.cPrice}</Text></View> <View style={{color:'grey'}}><Text>USD</Text></View></TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
-    </TableContainer>
-      <TablePagination
+    </TableContainer> */}
+      {/* <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
         component="div"
         count={Rows.length}
         rowsPerPage='0'
         page='1'
-      />
+      /> */}
     
     </View>
         </View>
