@@ -86,7 +86,7 @@ const App =() => {
             <Text style={{marginTop:40,marginLeft:40,fontWeight:'600'}}>AMZN</Text>
             <Image
             style={{width:70,height:60,marginTop:40,marginLeft:120}}         
-            source={require('./images/AMZN.png')}
+            source={require('./images/AMZN.svg')}
             />
           </View>
           <View>
